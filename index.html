@@ -3,47 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spelling Bee</title>
-    <style>
-        body {
-            font-size: 18px;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .chat-drawer {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            height: auto;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            padding: 10px;
-        }
-        .board {
-            width: 80vw;
-            height: 80vh;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            border-radius: 4px;
-        }
-        .sidebar {
-            display: none;  /* Removed sidebar chats */
-        }
-    </style>
+    <title>Spelling Bee Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="board">
-        <!-- Board content goes here -->
+    <div class="login-screen">
+        <h1>Welcome to Spelling Bee</h1>
+        <input type="text" placeholder="Enter your name" />
+        <button id="login-btn">Login</button>
     </div>
+
+    <div class="game-layout">
+        <div class="sidebar left-sidebar">
+            <h2>Team A</h2>
+            <div id="team-a-chat"></div>
+        </div>
+
+        <div class="center-column">
+            <h2>Game Board</h2>
+            <div id="game-board"></div>
+            <button id="start-game-btn">Start Game</button>
+        </div>
+
+        <div class="sidebar right-sidebar">
+            <h2>Team B</h2>
+            <div id="team-b-chat"></div>
+        </div>
+    </div>
+
     <div class="chat-drawer">
-        <!-- Chat content goes here -->
+        <div id="public-chat"></div>
+        <div id="team-chat"></div>
     </div>
+
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
 </body>
-</html>
+</html> 
